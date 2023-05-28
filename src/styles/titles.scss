@@ -1,0 +1,65 @@
+.title {
+    margin-left: 15px;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--second_color);
+    &__single-page {
+        text-align: center;
+        margin-left: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 5rem;
+    }
+}
+.back {
+    &_title {
+        display: none;
+        z-index: -1;
+        position: absolute;
+        margin-left: 15px;
+        top: 100px;
+        font-size: 20rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--code-color);
+        opacity: 0.05;
+    }
+
+    &_right {
+        left: 30%;
+    }
+    &_left {
+        left: -30%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .back {
+        &_title {
+            font-size: 20rem;
+        }
+
+        &_right {
+            left: 30%;
+        }
+        &_left {
+            left: -30%;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .back {
+        &_title {
+            font-size: 8rem;
+            top: -10px;
+            display: block;
+        }
+        &_right {
+            left: -10%;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+}

@@ -1,0 +1,51 @@
+.tags {
+    font-size: 1.5rem;
+    color: var(--code-color);
+    font-family: 'Caveat', sans-serif;
+
+    font-weight: 400;
+    margin: 5px 0;
+    &_top {
+        &::after {
+            content: '>';
+            display: inline;
+        }
+        &::before {
+            content: '<';
+            display: inline;
+        }
+    }
+    &_bottom {
+        &::after {
+            content: '>';
+            display: inline;
+        }
+        &::before {
+            content: '</';
+            display: inline;
+        }
+    }
+    &_first {
+        margin-top: 50px;
+    }
+    &_last {
+        padding-bottom: 50px;
+    }
+    &_base {
+        display: block;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .tags {
+        &_first {
+            margin-top: 80px;
+        }
+    }
+}
+@media only screen and (max-width: 480px) {
+    .tags {
+        &_base {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import "./styles/variables.scss";
+@import "./styles/cursor.scss";
+@import "./styles/fonts.scss";
+@import "./styles/normalize.scss";
+@import "./styles/tags.scss";
+@import "./styles/buttons.scss";
+@import "./styles/titles.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  cursor: none;
+}
+html {
+  // scroll-behavior: smooth;
+  // scroll-padding: 50px;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+}
+body {
+  // width: 100vw;
+  position: relative;
+  margin: 0;
+  color: #000;
+  // font-family: "VSC", sans-serif;
+  font-family: "Roboto", sans-serif;
+  // background: var(--bg_color);
+  // color: var(--text_light);
+  // overflow-x: hidden;
+}
+.container {
+  padding: 0 140px 0 120px;
+  max-width: 1140px;
+  // max-width: 1200px;
+  margin: 0 auto;
+  // overflow: hidden;
+}
+
+// code {
+//     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+// }
+
+.hidden {
+  opacity: 0;
+  transition: all 0.5s;
+  filter: blur(2px);
+  transform: translateY(100%);
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0%);
+}
+
+// @media only screen and (max-width: 1200px) {
+//     .container {
+//         overflow: hidden;
+//     }
+// }
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+    max-width: 1140px;
+    // max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}

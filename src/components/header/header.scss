@@ -1,0 +1,215 @@
+.header {
+  &__wrapper {
+    width: 100%;
+    position: fixed;
+    background: var(--bg-light);
+    z-index: 50;
+    padding: 10px 20px;
+    box-shadow: 0 0px 5px var(--text-dark-300);
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // gap: 30px;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__item {
+      font-weight: 400;
+      padding: 15px;
+      font-size: 1.2rem;
+      color: var(--text-dark-600);
+
+      &._active {
+        color: var(--main-color-700);
+        position: relative;
+        &::after {
+          content: "";
+          width: 40px;
+          height: 2px;
+          display: block;
+          position: absolute;
+          background: var(--main-color-600);
+          border-radius: 20px;
+          bottom: 20%;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+  &__logo {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--text-dark-600);
+    // font-family: "Marck Script", cursive;
+    // font-family: "Pacifico", cursive;
+    // font-family: "Dancing Script", cursive;
+
+    span {
+      color: var(--main-color-600);
+    }
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      z-index: 100;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__wrapper {
+      min-width: 100%;
+      position: fixed;
+      background: var(--bg-light);
+      // z-index: 50;
+      padding: 10px 20px;
+      box-shadow: 0 0px 5px var(--text-dark-300);
+    }
+    &__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      // gap: 30px;
+
+      &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        display: none;
+      }
+      &__item {
+        font-weight: 400;
+        padding: 15px;
+        font-size: 1.2rem;
+        color: var(--text-dark-600);
+      }
+    }
+    &__logo {
+      font-size: 2rem;
+    }
+    &__cart {
+      width: 50px;
+      height: 40px;
+      padding: 10px 10px;
+      position: relative;
+      margin-right: 0px;
+      // background: var(--main-color-300);
+      border-radius: 10px;
+      &__total {
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      &__price {
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+      &__title {
+        margin-bottom: 0px;
+        font-size: 0.9rem;
+        // font-weight: 600;
+        // letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      &__block {
+        background: none;
+        // padding: 5px;
+        transition: all 0.5s;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        &:hover {
+          background: var(--main-color-300);
+        }
+      }
+
+      &__counter {
+        position: absolute;
+        top: 2px;
+        right: 5px;
+        padding: 5px;
+
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        background: var(--main-color-500);
+        p {
+          font-size: 0.9em;
+          line-height: 0.8rem;
+          color: white;
+          font-weight: 400;
+
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    &__wrapper {
+      padding: 10px 15px;
+    }
+    &__logo {
+      font-size: 1.6rem;
+      // display: none;
+    }
+    &__cart {
+      width: 50px;
+      height: 40px;
+      padding: 10px 10px;
+      position: relative;
+      margin-right: 0px;
+      // background: var(--main-color-300);
+      border-radius: 10px;
+      &__total {
+        padding: 5px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      &__price {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      &__title {
+        font-size: 0.8rem;
+      }
+      &__counter {
+        position: absolute;
+        top: 2px;
+        right: 5px;
+        padding: 5px;
+
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+$dark: var(--main-color-600);
+$light: #000000;
+$color: var(--main-color-600);
+$width: 30px;
+$height: 4px;
+$top: 13px;
+
+.burger {
+  // display: none;
+  // background: #000;
+  z-index: 99;
+  position: absolute;
+  width: $width;
+  height: $width;
+  top: 0;
+  left: 0;
+  transition-duration: 0.5s;
+  &__block {
+    display: block;
+    width: $width;
+    height: 35px;
+    position: relative;
+    // background: #000;
+    margin-right: 20px;
+    // display: none;
+  }
+  .icon {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: $height;
+    width: $width;
+    top: 15px;
+    background-color: $dark;
+    border-radius: 20px;
+
+    &:before {
+      transition-duration: 0.5s;
+      position: absolute;
+      width: $width;
+      height: $height;
+      background-color: $dark;
+      content: "";
+      top: -11px;
+      border-radius: 20px;
+    }
+
+    &:after {
+      transition-duration: 0.5s;
+      position: absolute;
+      width: $width;
+      height: $height;
+      background-color: $dark;
+      content: "";
+      top: 11px;
+      border-radius: 20px;
+    }
+  }
+
+  &.open {
+    top: 0px;
+    .burger {
+      &__block {
+        margin-right: 0px;
+      }
+    }
+    .icon {
+      transition-duration: 0.5s;
+      background: transparent;
+
+      &:before {
+        background: var(--main-color-600);
+
+        transform: rotateZ(45deg) scaleX(1.25) translate(7px, 7px);
+      }
+
+      &:after {
+        background: var(--main-color-600);
+
+        transform: rotateZ(-45deg) scaleX(1.25) translate(7px, -7px);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .burger {
+    z-index: 99;
+
+    display: block;
+
+    &__block {
+      z-index: 99;
+
+      display: block;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .burger {
+    width: 25px;
+    height: 20px;
+    &__block {
+      width: 25px;
+      height: 35px;
+      margin-right: 10px;
+    }
+    .icon {
+      height: 3px;
+      width: 25px;
+
+      &:before {
+        width: 25px;
+        height: 3px;
+        top: -9px;
+      }
+
+      &:after {
+        width: 25px;
+        height: 3px;
+        top: 9px;
+      }
+    }
+
+    &.open {
+      .icon {
+        &:before {
+          transform: rotateZ(45deg) scaleX(1.25) translate(6px, 6px);
+        }
+
+        &:after {
+          transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+        }
+      }
+    }
+  }
+}

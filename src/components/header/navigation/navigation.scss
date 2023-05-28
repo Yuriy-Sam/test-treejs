@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // gap: 30px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__item {
+    font-weight: 400;
+    padding: 15px;
+    font-size: 1.2rem;
+    color: var(--text-dark-600);
+    &._active {
+      color: green;
+      font-size: 2rem;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .navigation {
+    &__list {
+      display: none;
+    }
+    &__item {
+    }
+  }
+}
